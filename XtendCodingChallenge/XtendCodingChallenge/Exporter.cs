@@ -18,13 +18,14 @@ namespace XtendHealthcare.CodingChallenge
         public void ExportAccountsToFile(int clientId, string folderPath)
         {
             // Get account data.
+            var accounts = _accountRepository.GetAllForClient(clientId);
 
             // Export data to a file.
-            AccountExport exporter = null;
+            AccountExporter exporter = null;
             switch (clientId)
             {
                 case 0:     // GeneralHospital
-                    exporter = new GeneralHospitalAccountExport();
+                    exporter = new GeneralHospitalAccountExporter();
                     break;
                 case 1:     // VeteranHospital
                     //exporter = new VeteranHospitalAccountExport();
@@ -32,7 +33,7 @@ namespace XtendHealthcare.CodingChallenge
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            exporter?.ExportToFile(folderPath);
+            exporter?.ExportToFile(accounts, folderPath);
 
             // Log the export.
             _exportHistoryRepository.Add(new ExportHistory(){ClientId = clientId, ExportDate = DateTime.UtcNow, ExportedBy = "someUser"});
