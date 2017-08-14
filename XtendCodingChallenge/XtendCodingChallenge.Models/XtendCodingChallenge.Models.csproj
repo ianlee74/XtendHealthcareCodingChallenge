@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AccountExportFile.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="ExportHistory.cs" />
     <Compile Include="Facility.cs" />
     <Compile Include="Insurance.cs" />
     <Compile Include="Patient.cs" />

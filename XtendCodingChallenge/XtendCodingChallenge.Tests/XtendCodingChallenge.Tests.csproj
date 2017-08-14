@@ -50,12 +50,22 @@
   <ItemGroup>
     <Compile Include="AccountExportTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryMocks\FakeAccountRepository.cs" />
+    <Compile Include="RepositoryMocks\FakeExportHistoryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="RepositoryMocks\" />
+    <ProjectReference Include="..\XtendCodingChallenge.Models\XtendCodingChallenge.Models.csproj">
+      <Project>{70DB91C3-BE8A-481F-9750-70AFD875F72E}</Project>
+      <Name>XtendCodingChallenge.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XtendCodingChallenge\XtendCodingChallenge.csproj">
+      <Project>{CE44657B-A1BD-4041-A367-74C5748945B1}</Project>
+      <Name>XtendCodingChallenge</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

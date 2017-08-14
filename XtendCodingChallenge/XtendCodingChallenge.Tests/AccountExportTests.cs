@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using XtendCodingChallenge.Tests.RepositoryMocks;
+using XtendHealthcare.CodingChallenge;
 
 namespace XtendCodingChallenge.Tests
 {
@@ -12,7 +15,11 @@ namespace XtendCodingChallenge.Tests
         [TestMethod]
         public void ExportHistory_is_recorded()
         {
-            throw new NotImplementedException();
+            var exportHistoryRepository = new FakeExportHistoryRepository();
+            var exporter = new Exporter(new FakeAccountRepository(), exportHistoryRepository);
+            exporter.ExportAccountsToFile(0, @"c:\temp");
+            
+            Assert.IsTrue(exportHistoryRepository.GetAll().Count() == 1);
         }
 
         /// <summary>

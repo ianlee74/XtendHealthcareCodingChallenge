@@ -7,7 +7,7 @@
     <ProjectGuid>{CE44657B-A1BD-4041-A367-74C5748945B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XtendCodingChallenge</RootNamespace>
+    <RootNamespace>XtendHealthcare.CodingChallenge</RootNamespace>
     <AssemblyName>XtendCodingChallenge</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -40,10 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountExport.cs" />
+    <Compile Include="Exporter.cs" />
+    <Compile Include="GeneralHospitalAccountExport.cs" />
+    <Compile Include="Interfaces\IExportHistoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\IAccountRepository.cs" />
+    <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\ExportHistoryRepository.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\XtendCodingChallenge.Models\XtendCodingChallenge.Models.csproj">
+      <Project>{70db91c3-be8a-481f-9750-70afd875f72e}</Project>
+      <Name>XtendCodingChallenge.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
