@@ -43,10 +43,12 @@
     <Compile Include="AccountExporter.cs" />
     <Compile Include="Exporter.cs" />
     <Compile Include="GeneralHospitalAccountExporter.cs" />
+    <Compile Include="Interfaces\IClientRepository.cs" />
     <Compile Include="Interfaces\IExportHistoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IAccountRepository.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\ClientRepository.cs" />
     <Compile Include="Repositories\ExportHistoryRepository.cs" />
     <Compile Include="VeteranHospitalAccountExporter.cs" />
   </ItemGroup>

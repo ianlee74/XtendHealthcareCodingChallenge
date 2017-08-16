@@ -205,6 +205,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\AccountController.cs" />
+    <Compile Include="ApiControllers\ClientController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DurandalBundleConfig.cs" />
     <Compile Include="App_Start\DurandalConfig.cs" />
@@ -405,6 +407,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XtendCodingChallenge.Models\XtendCodingChallenge.Models.csproj">
+      <Project>{70db91c3-be8a-481f-9750-70afd875f72e}</Project>
+      <Name>XtendCodingChallenge.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XtendCodingChallenge\XtendCodingChallenge.csproj">
+      <Project>{ce44657b-a1bd-4041-a367-74c5748945b1}</Project>
+      <Name>XtendCodingChallenge</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
