@@ -7,10 +7,10 @@ namespace XtendHealthcare.CodingChallenge
 {
     public abstract class AccountExporter
     {
-        protected int ClientId { get; }
-        protected char Delimiter { get; set; }
+        public int ClientId { get; }
+        public DateTime ExportDate { get; }
+        public char Delimiter { get; set; }
         protected string DateFormat { get; set; }
-        protected DateTime ExportDate { get; }
         protected FileSplitCriteriaEnum FileSplitCriteria { get; set; }
 
         protected AccountExporter(int clientId)
@@ -39,10 +39,9 @@ namespace XtendHealthcare.CodingChallenge
                 {
                     lineData.Append(field + Delimiter);
                 }
-                if (lineData.Length != 0)
-                {
-                    fileData.AppendLine(lineData.ToString());
-                }
+                if (lineData.Length == 0) continue;
+                lineData.Remove(lineData.Length - 1, 1);    // Remove the final delimiter.
+                fileData.AppendLine(lineData.ToString());
             }
             var exportFile = new AccountExportFile() {Data = fileData.ToString(), FileName = fileName};
             return new List<AccountExportFile>() {exportFile};

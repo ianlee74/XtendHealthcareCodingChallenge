@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using XtendCodingChallenge.Tests.RepositoryMocks;
 using XtendHealthcare.CodingChallenge;
+using XtendHealthcare.CodingChallenge.Models;
 
 namespace XtendCodingChallenge.Tests
 {
@@ -35,9 +38,16 @@ namespace XtendCodingChallenge.Tests
         /// GeneralHospital wants all account information exported.
         /// </summary>
         [TestMethod]
-        public void GeneralHospital_export_includes_correct_fields()
+        public void GeneralHospital_export_includes_all_fields()
         {
-            throw new NotImplementedException();
+            const int EXPECTED = 8;
+
+            var exporter = new GeneralHospitalAccountExporter();
+            var repo = new FakeAccountRepository();
+            var files = (IList<AccountExportFile>)exporter.ExportToFile(repo.GetAllForClient(0), null);
+            var rows = files[0].Data.Split(new[]{Environment.NewLine}, StringSplitOptions.None);
+            var fields = rows[0].Split(exporter.Delimiter);
+            Assert.AreEqual(EXPECTED, fields.Length);
         }
 
         /// <summary>
@@ -89,7 +99,7 @@ namespace XtendCodingChallenge.Tests
         /// VeteranHospital wants the following fields exported: account, insurance, and facility data along with just the patient’s SSN
         /// </summary>
         [TestMethod]
-        public void VeteranHospital_export_includes_correct_fields()
+        public void VeteranHospital_export_includes_all_fields()
         {
             throw new NotImplementedException();
         }
