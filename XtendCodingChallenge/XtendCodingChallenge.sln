@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XtendCodingChallenge", "Xte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XtendCodingChallenge.Models", "XtendCodingChallenge.Models\XtendCodingChallenge.Models.csproj", "{70DB91C3-BE8A-481F-9750-70AFD875F72E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XtendCodingChallenge.Web", "XtendCodingChallenge.Web\XtendCodingChallenge.Web.csproj", "{B980AD97-4D79-461C-AEE0-B0778A70F958}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{70DB91C3-BE8A-481F-9750-70AFD875F72E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70DB91C3-BE8A-481F-9750-70AFD875F72E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70DB91C3-BE8A-481F-9750-70AFD875F72E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B980AD97-4D79-461C-AEE0-B0778A70F958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B980AD97-4D79-461C-AEE0-B0778A70F958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B980AD97-4D79-461C-AEE0-B0778A70F958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B980AD97-4D79-461C-AEE0-B0778A70F958}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
